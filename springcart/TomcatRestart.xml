@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tomcatrestart" default="restart" basedir=".">
+    
+  <target name="clean" description="clean up" depends="shutdown">    
+    <delete dir="C:\tomcat\logs"/>
+  	<delete dir="C:\tomcat\webapps\springcart"/>
+  	
+  </target>
+	<target name="restart" depends="clean">
+		<exec executable="C:\tomcat\bin\startup.bat"></exec>
+	</target>
+	<target name="shutdown">
+			<exec executable="C:\tomcat\bin\shutdown.bat"></exec>
+		</target>
+</project>
